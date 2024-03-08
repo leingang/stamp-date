@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stamp-date"
+version = "0.1"
+authors = [
+    {name = "Matthew Leingang", email = "leingang@nyu.edu"},
+]
+description = "Stamp the date on PDF files"
+readme = "README.md"
+requires-python = ">=3.8"
+# keywords = ["one", "two"]
+# license = {text = "BSD-3-Clause"}
+classifiers = [
+    "Private :: Do Not Upload",
+    "Programming Language :: Python :: 3",
+    "Development Status :: 2 - Pre-Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Education"
+]
+dependencies = [
+    "pypdf",
+    "reportlab",
+    "icalendar",
+    "icalevents",
+    "click",
+    'importlib-metadata; python_version<"3.10"',
+]
+# dynamic = ["version"]
+
+[project.scripts]
+stamp-date = "stamp_date.cli:stamp_date"
+
+# ... other project metadata fields as listed in:
+#     https://packaging.python.org/en/latest/guides/writing-pyproject-toml/
